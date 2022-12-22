@@ -1,0 +1,30 @@
+.container {
+    max-width: 1120px;
+    margin: auto;
+}
+
+header {
+    margin: 50px 0;
+    text-align: center;
+    color: white;
+    h1 {
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 1.2rem;
+        line-height: 30px;
+    }
+}
+
+
+@media screen and (max-width : 600px) {
+    header {
+        margin: 25px 0;
+        h1 {
+            font-size: 1.6rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+}

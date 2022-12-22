@@ -1,0 +1,11 @@
+<form>
+    <input class="search-field" type="search" name="search" [(ngModel)]="searchValue">
+    <button
+     class="submit-btn" 
+     type="submit"
+     (click)="onSearchSubmit()"
+     >
+     <img src="../../../../assets/chercher.png" alt="">
+    </button>
+</form>
+<a class="action-link" routerLink="superhero/random">Get a random superheroes</a>

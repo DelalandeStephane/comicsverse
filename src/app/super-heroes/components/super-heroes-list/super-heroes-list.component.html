@@ -1,0 +1,10 @@
+<app-search-form (getNewHeroesList)="onSearchChange($event)"></app-search-form>
+<div *ngIf="nbResult > 0" class="search-count">{{nbResult}} results for "{{ searchValue }}".</div>
+<div class="superheroes-list">
+    <app-loader *ngIf="isLoading"></app-loader>
+    <app-super-hero-card 
+    *ngFor="let superHero of superHeroes$ | async" 
+    [superHero]="superHero"
+    ></app-super-hero-card>
+</div>
+<div *ngIf="nbResult === 0" class="no-match">Sorry, no results were found.</div>

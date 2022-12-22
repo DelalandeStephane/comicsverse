@@ -1,0 +1,18 @@
+svg {
+    width: 100px;
+    height: 100px;
+    rotate: -90deg;
+}
+svg circle {
+    fill: none;
+    stroke: #D90429;
+    stroke-width: 10px;
+    stroke-dasharray: 280;
+    transform: translate(5px,5px);
+    stroke-linecap: round;
+}
+
+svg circle:nth-child(1){
+    stroke: rgba(201, 201, 201, 0.639);
+    stroke-dashoffset: 0;
+}

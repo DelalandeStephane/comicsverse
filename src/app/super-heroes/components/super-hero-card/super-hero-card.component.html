@@ -1,0 +1,20 @@
+<div class="card-hero" (click)="OnSuperHeroRedirect()">
+    <div class="hero-img-blk">
+        <img class="hero-img" 
+        [src]="superHero.image.url ? superHero.image.url : '../../../../assets/no-pic.jpg'" 
+        [alt]="superHero.name"
+        onerror="this.src='../../../../assets/no-pic.jpg';"
+        >
+        <div class="reflect-fx"></div>
+    </div>
+    <div class="hero-legend">
+        
+        <img class="alignement-icon" [src]="'../../../../assets/'+superHero.biography.alignment+'.png'" alt=""><!-- Creer fonction pour adapter à l'alignement-->
+       <h2> {{ superHero.name}}</h2>
+       <p class="hero-fullname"> Aka {{superHero.biography['full-name']}}</p>
+       <p class="hero-publisher">{{ superHero.biography.publisher}}</p>
+    </div>
+
+</div>
+
+

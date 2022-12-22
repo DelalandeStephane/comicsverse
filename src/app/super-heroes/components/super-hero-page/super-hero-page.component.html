@@ -1,0 +1,35 @@
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div class="hero-container" *ngIf="superHero$ | async as superHero">
+    <button class="back-button"  (click)="onRedirectBack()">Back</button>
+    <div class="presentation">
+        <img class="hero-image" 
+        [src]="superHero.image.url ? superHero.image.url : '../../../../assets/no-pic.jpg'"
+        [alt]="superHero.name"
+        onerror="this.src='../../../../assets/no-pic.jpg';"
+        >
+        <div class="appearance">
+            <h2>Presentation</h2>
+            <p>Name : {{ superHero.name }} aka {{ superHero.biography['full-name'] }} </p> 
+            <p>Race : {{ superHero.appearance.race !== 'null' ? superHero.appearance.race : 'Unknow' }}</p>
+            <p>Gender : {{ superHero.appearance.gender !=='-' ? superHero.appearance.gender : 'Unknow' }}</p>
+            <p>Place of birth : 
+                {{ superHero.biography['place-of-birth'] !=="-" 
+                ? superHero.biography['place-of-birth'] : 'Unknow'}} </p>
+            <p>First appearance: {{  superHero.biography['first-appearance'] !=="-" ?
+                superHero.biography['first-appearance'] : 'Unknow'  }} </p>
+            <p>Publisher : {{ superHero.biography.publisher }} </p>
+            <p>Alignment : {{ superHero.biography.alignment !=="-"?
+                superHero.biography.alignment : "Unknow"}} </p>
+            <p>Weight : {{ superHero.appearance.weight[1] !== '0 kg' ? superHero.appearance.weight[1] :'Unknow' }}</p>
+            <p>Height : {{ superHero.appearance.height[1] !== '0 cm' ? superHero.appearance.height[1] :'Unknow' }}</p>
+        </div>
+    </div>
+    <div class="power-stats" >
+        <div class="power-box" *ngFor="let power of powerList | keyvalue">
+            <app-progress-circle  [progressValue]="power.value" class="power-progress"></app-progress-circle>
+            <p>{{ power.key }}</p>
+            <p class="power-value">{{power.value !== 'null' ? power.value : 'Unknow'}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+.cube {
+    margin: 100px auto 0;
+    transform: rotateX(-36deg) rotateY(-45deg);
+    width: 70px;
+    height: 70px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 2.5s infinite cubic-bezier(0.16, 0.61, 0.49, 0.91);
+  }
+  
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff0033;
+    border: 2px solid #fbfbfb;
+    border-radius: 5px;
+    box-shadow: 0 0 25px #ff0033;
+    animation: shine  2.5s infinite cubic-bezier(0.16, 0.61, 0.49, 0.91);
+  }
+  
+  .top {
+    transform: rotateX(90deg) translateZ(35px) ;
+  }
+  .bottom {
+    transform: rotateX(-90deg) translateZ(35px);
+  }
+  .right {
+    transform: rotateY(90deg) translateZ(35px);
+  }
+  .left {
+    transform: rotateY(-90deg) translateZ(35px);
+  }
+  .front {
+    transform: translateZ(35px);
+  }
+  .back {
+    transform: rotateY(-180deg) translateZ(35px);
+  }
+
+  @keyframes spin {
+    33% {
+      transform: rotateX(-36deg) rotateY(-405deg);
+    }
+    100% {
+      transform: rotateX(-36deg) rotateY(-405deg);
+    }
+  }
+  
+  @keyframes shine {
+    5% {
+      box-shadow: 0 0 50px #fff;
+      background: rgba(255, 0, 0, 0.4);
+    }
+    40% {
+      box-shadow: 0 0 25px #ff0033;
+      background: #ff0033;
+    }
+  }
+  
